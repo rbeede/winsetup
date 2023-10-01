@@ -6,14 +6,14 @@ Helpful scripts to make setting up a Windows OS easier
 ### Privacy Settings
 - Windows permissions
 
-Let apps show me personalized ads
-Let websites show me locally relevant content
-Show me suggested content in the Settings app
-Settings > Privacy & security > General. 
-Settings > Privacy & security > Speech.
-Settings > App permissions > Location.
-Settings > Privacy & security > Activity History
-Shared experiences
+- Let apps show me personalized ads
+- Let websites show me locally relevant content
+- Show me suggested content in the Settings app
+- Settings > Privacy & security > General. 
+- Settings > Privacy & security > Speech.
+- Settings > App permissions > Location.
+- Settings > Privacy & security > Activity History
+- Shared experiences
 
 
 ### Install Office
@@ -27,47 +27,47 @@ Add-AppxPackage -RegisterByFamilyName -MainPackage Microsoft.DesktopAppInstaller
 
 ### Notepad++
 
-Compare
-JSON Tools
-XML Tools
-View menu -> Zoom
-120 col bar Margins/Border/Edge
-Backup - disable session
+- Compare
+- JSON Tools
+- XML Tools
+- View menu -> Zoom
+- 120 col bar Margins/Border/Edge
+- Backup - disable session
 
 ### Google Chrome
 
-Disable auto-fill of passwords
-* chrome://password-manager/settings
-AdBlock Plus
-BitWarden
-Free Download Manager
-Default browser
+- Disable auto-fill of passwords
+  * chrome://password-manager/settings
+- AdBlock Plus
+- BitWarden
+- Free Download Manager
+- Default browser
 
 ### 7-Zip
 
-Associate with system
-Grid rows
-Cut down right click context
+- Associate with system
+- Grid rows
+- Cut down right click context
 
 ### Desktop
 
-Hide recycle bin from desktop
-Enlarge desktop icon size
-Desktop background
-Set user profile picture
+- Hide recycle bin from desktop
+- Enlarge desktop icon size
+- Desktop background
+- Set user profile picture
 
 ### Taskbar
 
-Pin Chrome to taskbar
-Hide taskbar Search
-Show UTC clock as secondary clock
+- Pin Chrome to taskbar
+- Hide taskbar Search
+- Show UTC clock as secondary clock
 
 ### Explorer
 
-Turn off Group By
-Expand the ribbon bar
+- Turn off Group By
+- Expand the ribbon bar
 
-Add local printer
+- Add local printer
 
 ## PowerShell (admin)
 
@@ -77,8 +77,8 @@ Add local printer
 powercfg /setactive 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c
 ```
 
-Screensaver is disabled by default
-High performance power scheme should set no sleep on AC by default
+- Screensaver is disabled by default
+- High performance power scheme should set no sleep on AC by default
 
 
 ### Disable Restore Points
