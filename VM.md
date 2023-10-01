@@ -12,7 +12,7 @@ Power Settings
 Prepare for disk compact for VMWare
 
 ```
-defrag C: /D /X
+defrag C: /H /D
 defrag C: /H /X
 ```
 
