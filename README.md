@@ -40,7 +40,6 @@ Add-AppxPackage -RegisterByFamilyName -MainPackage Microsoft.DesktopAppInstaller
   * chrome://password-manager/settings
 - AdBlock Plus
 - BitWarden
-- Free Download Manager
 - Default browser
 
 ### 7-Zip
