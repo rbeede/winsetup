@@ -11,16 +11,6 @@ REG ADD HKCU\Software\Policies\Microsoft\Windows\WindowsCopilot /v "TurnOffWindo
 
 REG ADD HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Personalization /v "NoLockScreen" /t REG_DWORD /f /d 1
 
-# Remove registry keys for New right context menu
-REG DELETE "HKEY_CLASSES_ROOT\.accdb\Access.Application.16\ShellNew"
-REG DELETE "HKEY_CLASSES_ROOT\.mdb\ShellNew"
-REG DELETE "HKEY_CLASSES_ROOT\.pptx\PowerPoint.Show.12\ShellNew"
-REG DELETE "HKEY_CLASSES_ROOT\.pub\Publisher.Document.16\ShellNew"
-REG DELETE "HKEY_CLASSES_ROOT\.xlsx\Excel.Sheet.12\ShellNew"
-REG DELETE "HKEY_CLASSES_ROOT\.mpp\MSProject.Project.9\ShellNew"
-REG DELETE "HKEY_CLASSES_ROOT\.rtf\ShellNew"
-REG DELETE "HKEY_CLASSES_ROOT\.bmp\ShellNew"
-
 ```
 
 ### Desktop
