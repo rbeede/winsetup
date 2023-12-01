@@ -5,6 +5,8 @@ REG ADD HKCU\Software\Policies\Microsoft\Windows\WindowsCopilot /v "TurnOffWindo
 
 REG ADD HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Personalization /v "NoLockScreen" /t REG_DWORD /f /d 1
 
+REG ADD "HKCU\Control Panel\Keyboard" /v PrintScreenKeyForSnippingEnabled /t REG_DWORD /d 0 /f
+
 # Privacy
 REG ADD HKCU\Software\Microsoft\Windows\CurrentVersion\AdvertisingInfo /v "Enabled" /t REG_DWORD /f /d 0
 REG ADD "HKCU\Control Panel\International\User Profile" /v "HttpAcceptLanguageOptOut" /t REG_DWORD /f /d 1
