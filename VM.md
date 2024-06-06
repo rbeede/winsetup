@@ -10,4 +10,5 @@ Notes for specific differences when configuration a virtual machine Windows OS g
 ```
 defrag C: /H /D
 defrag C: /H /X
+defrag C: /H /L
 ```
