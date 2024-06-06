@@ -14,6 +14,7 @@ Copy and paste each .md markdown section into the appropriate terminal. Recommen
 1. [UNINSTALL.md](UNINSTALL.md)
 2. [INSTALL.md](INSTALL.md)
 3. [CONFIGURE.md](CONFIGURE.md)
+4. Privacy - https://github.com/StellarSand/privacy-settings/blob/main/Privacy%20Settings/Windows-11.md
 
 The [VM.md](VM.md) is useful for virtual machines
 
