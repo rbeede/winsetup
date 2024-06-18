@@ -17,6 +17,11 @@ REG ADD "HKCU\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" 
 REG ADD "HKCU\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" /v "SubscribedContent-353696Enabled" /t REG_DWORD /f /d 0
 
 New-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\FileSystem" -Name "LongPathsEnabled" -Value 1 -PropertyType DWORD -Force
+
+# I do not need OneDrive as a default, stop nagging me Microsoft Office
+# Group Policy: Prevent the usage of OneDrive for file storage
+REG ADD "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\OneDrive" /v "DisableFileSyncNGSC" /t REG_DWORD /f /d 1
+
 ```
 
 ### Desktop
