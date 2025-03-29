@@ -68,9 +68,6 @@ REG ADD "HKEY_CURRENT_USER\Software\Microsoft\Clipboard" /v "EnableClipboardHist
 #### Explorer
 
 - Turn off Group By
-- Expand the ribbon bar
-
-- Add local printer
 
 
 ### Power Settings
