@@ -27,6 +27,9 @@ REG ADD "HKEY_CURRENT_USER\Software\Microsoft\Clipboard" /v "EnableClipboardHist
 
 # Disable pop-up Logitech Options+ software
 REG DELETE HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Run /v "Logitech Download Assistant" /f
+
+# Bitlocker Enhanced PINs
+REG ADD "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\FVE" /v "UseEnhancedPin" /t REG_DWORD /f /d 1
 ```
 
 ### Desktop
