@@ -27,9 +27,6 @@ REG ADD "HKEY_CURRENT_USER\Software\Microsoft\Clipboard" /v "EnableClipboardHist
 
 # Disable pop-up Logitech Options+ software
 REG DELETE HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Run /v "Logitech Download Assistant" /f
-
-# Notepad++ as default txt opener
-REG ADD "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\FileExts\.txt\UserChoice" /v "ProgId" /f /d "Applications\C:\Program Files\Notepad++\notepad++.exe"
 ```
 
 ### Desktop
@@ -56,6 +53,7 @@ REG ADD "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Fi
 - View menu -> Zoom
 - 120 col bar Margins/Border/Edge
 - Backup - disable session
+- Manually set (cannot regedit) to open txt files
 
 #### Google Chrome
 
