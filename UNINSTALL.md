@@ -29,6 +29,7 @@ Get-ChildItem -Path $env:appdata\Microsoft\Windows\SendTo -Exclude "*Desktop*" |
 
 # Uninstalls after a reboot
 Get-AppxPackage -all Microsoft.Getstarte* | Remove-AppxPackage -All
+# Removes from program menu only
 Get-AppxPackage *Microsoft.WindowsNotepad* | Remove-AppxPackage
 Disable-WindowsOptionalFeature -Online -FeatureName "WindowsMediaPlayer" -NoRestart
 
