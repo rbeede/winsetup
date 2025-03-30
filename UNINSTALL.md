@@ -12,16 +12,17 @@ winget uninstall "Outlook for Windows"
 winget uninstall "Microsoft People"
 winget uninstall "Power Automate"
 winget uninstall "Snipping Tool"
-winget uninstall "Microsoft To Do"
 winget uninstall "Microsoft.DevHome"
 winget uninstall "Windows Camera"
 winget uninstall "Windows Notepad"
 winget uninstall "Game Bar"
 winget uninstall "Phone Link"
 winget uninstall "Windows Media Player"
-winget uninstall Quick Assist""
+winget uninstall "Quick Assist"
 winget uninstall "Microsoft Teams"
 winget uninstall "Spotify Music"
+winget uninstall "Microsoft To Do"
+
 # Copilot disabled
 winget uninstall 9nht9rb2f4hd
 
