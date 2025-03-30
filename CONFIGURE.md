@@ -29,7 +29,7 @@ REG ADD "HKEY_CURRENT_USER\Software\Microsoft\Clipboard" /v "EnableClipboardHist
 REG DELETE HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Run /v "Logitech Download Assistant" /f
 
 # Notepad++ as default txt opener
-REG ADD "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\FileExts\.txt\UserChoice" /v "ProgId" /f /d "Applications\C:\Program Files\Notepad++\notepad++.exe"
+REG ADD "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\FileExts\.txt\UserChoice" /v "ProgId" /f /d "Applications\C:\Program Files\Notepad++\notepad++.exe"
 ```
 
 ### Desktop
