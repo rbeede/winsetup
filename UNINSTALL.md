@@ -22,6 +22,8 @@ winget uninstall "Windows Media Player"
 winget uninstall Quick Assist""
 winget uninstall "Microsoft Teams"
 winget uninstall "Spotify Music"
+# Copilot disabled
+winget uninstall 9nht9rb2f4hd
 
 Get-ChildItem -Path $env:appdata\Microsoft\Windows\SendTo -Exclude "*Desktop*" | Remove-Item -Verbose
 
