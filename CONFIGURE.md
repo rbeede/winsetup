@@ -27,6 +27,9 @@ REG ADD "HKEY_CURRENT_USER\Software\Microsoft\Clipboard" /v "EnableClipboardHist
 
 # Disable pop-up Logitech Options+ software
 REG DELETE HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Run /v "Logitech Download Assistant" /f
+
+# Notepad++ as default txt opener
+REG ADD "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\FileExts\.txt\UserChoice" /v "ProgId" /t REG_DWORD /f /d "Applications\C:\Program Files\Notepad++\notepad++.exe"
 ```
 
 ### Desktop
