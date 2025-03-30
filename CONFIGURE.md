@@ -31,7 +31,8 @@ REG DELETE HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Run /v "
 # Bitlocker Enhanced PINs
 REG ADD "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\FVE" /v "UseEnhancedPin" /t REG_DWORD /f /d 1
 REG ADD "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\FVE" /v "UseTPMPIN" /t REG_DWORD /f /d 2
-```
+REG ADD "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\FVE" /v "UseAdvancedStartup" /t REG_DWORD /f /d 2
+ ```
 
 ### Desktop
 
