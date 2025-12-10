@@ -39,6 +39,8 @@ REG ADD "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\FVE" /v "UseTPMKey" /t R
 REG ADD "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\FVE" /v "UseTPMKeyPIN" /t REG_DWORD /f /d 0
  ```
 
+REG ADD HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\TimeZoneInformation /v "RealTimeIsUniversal" /t REG_DWORD /f /d 1
+
 ### Desktop
 
 - Hide recycle bin from desktop
