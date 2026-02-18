@@ -32,6 +32,10 @@ REG DELETE HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Run /v "
 # Better time zone management between Windows / Linux
 REG ADD HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\TimeZoneInformation /v "RealTimeIsUniversal" /t REG_DWORD /f /d 1
 
+# Hide recycle bin icon on desktop
+REG ADD HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\HideDesktopIcons\NewStartPanel /v "{645FF040-5081-101B-9F08-00AA002F954E}" /t REG_DWORD /f /d 1
+
+
 # Bitlocker Enhanced PINs
 REG ADD "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\FVE" /v "UseEnhancedPin" /t REG_DWORD /f /d 1
 REG ADD "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\FVE" /v "UseTPMPIN" /t REG_DWORD /f /d 1
@@ -46,7 +50,6 @@ REG ADD "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\FVE" /v "UseTPMKeyPIN" /
 
 ### Desktop
 
-- Hide recycle bin from desktop
 - Enlarge desktop icon size
 - Desktop background
 - Set user profile picture
