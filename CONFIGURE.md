@@ -112,8 +112,15 @@ vssadmin delete shadows /all
 
 ### Configure Windows firewall
 
-Block all incoming by default
+###### Update: Block all incoming by default
+
+Using the blockinboundalways (Block all incoming connections, including those in the list of allowed apps) setting breaks IPv6 due to bugs in Microsoft Windows dating back years and versions. Even on a dominately IPv4 network the OS may try to use a local IPv6 address for your local DNS resolver. This results in failed connections. Currently you must not use this setting and manually curate (as it changes over time) the firewall ingress list. See also <a href="https://www.rodneybeede.com/computer%20problems/windows_firewall_-_block_all_incoming_connections_-_breaks_ipv6.html">https://www.rodneybeede.com/computer%20problems/windows_firewall_-_block_all_incoming_connections_-_breaks_ipv6.html</a>.
 
 ```
-netsh advfirewall set All firewallpolicy blockinboundalways,allowoutbound
+:: Not safe due to breaking DNS and IPv6
+:: netsh advfirewall set All firewallpolicy blockinboundalways,allowoutbound
+```
+
+```
+
 ```
