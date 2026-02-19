@@ -24,7 +24,7 @@ winget uninstall --disable-interactivity --accept-source-agreements --all "Spoti
 winget uninstall --disable-interactivity --accept-source-agreements --all "Microsoft To Do"
 
 # Copilot disabled
-winget uninstall --disable-interactivity --accept-source-agreements --all 9nht9rb2f4hd
+winget uninstall --disable-interactivity --accept-source-agreements --all "Microsoft 365 Copilot"
 
 Get-ChildItem -Path $env:appdata\Microsoft\Windows\SendTo -Exclude "*Desktop*" | Remove-Item -Verbose
 
