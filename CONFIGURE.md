@@ -114,13 +114,49 @@ vssadmin delete shadows /all
 
 ###### Update: Block all incoming by default
 
-Using the blockinboundalways (Block all incoming connections, including those in the list of allowed apps) setting breaks IPv6 due to bugs in Microsoft Windows dating back years and versions. Even on a dominately IPv4 network the OS may try to use a local IPv6 address for your local DNS resolver. This results in failed connections. Currently you must not use this setting and manually curate (as it changes over time) the firewall ingress list. See also <a href="https://www.rodneybeede.com/computer%20problems/windows_firewall_-_block_all_incoming_connections_-_breaks_ipv6.html">https://www.rodneybeede.com/computer%20problems/windows_firewall_-_block_all_incoming_connections_-_breaks_ipv6.html</a>.
+Using the blockinboundalways (Block all incoming connections, including those in the list of allowed apps) setting breaks IPv6 due to bugs in Microsoft Windows dating back years since Windows version 7 (2009). Even on a dominately IPv4 network the OS may try to use a local IPv6 address for your local DNS resolver. This results in failed connections. Currently you must not use this setting and manually curate (as it changes over time) the firewall ingress list. See also <a href="https://www.rodneybeede.com/computer%20problems/windows_firewall_-_block_all_incoming_connections_-_breaks_ipv6.html">https://www.rodneybeede.com/computer%20problems/windows_firewall_-_block_all_incoming_connections_-_breaks_ipv6.html</a>.
 
 ```
 :: Not safe due to breaking DNS and IPv6
 :: netsh advfirewall set All firewallpolicy blockinboundalways,allowoutbound
 ```
 
+This is not perfect as after you run it application later (but not an interactive user) could add rules in the background still. Need to look into a local GPO via registory keys that always ignores those rules and enforces the list:
 ```
+Set-NetFirewallProfile -Profile Domain,Public,Private -AllowLocalFirewallRules False
 
+# Disable "Notify me when Windows Defender Firewall blocks a new app"
+Set-NetFirewallProfile -Profile Domain,Private,Public -NotifyOnListen False
+
+# Get the built-in Core Networking group rules and enable them within the persistent store
+
+$rulesInGroup = Get-NetFirewallRule -DisplayGroup "Core Networking"
+
+
+Get-NetFirewallRule -Direction Inbound | Remove-NetFirewallRule
+
+Get-NetFirewallRule -Direction Outbound | Remove-NetFirewallRule
+
+
+
+foreach ($rule in $rulesInGroup) {
+    $paramNewRule = @{
+        Name = $rule.Name
+        DisplayName = $rule.DisplayName
+        Description = $rule.Description
+        # Note that DisplayGroup is not allowed
+        Group = $rule.Group
+        Enabled = $rule.Enabled
+        Profile = $rule.Profile
+        Direction = $rule.Direction
+        Action = $rule.Action
+        EdgeTraversalPolicy = $rule.EdgeTraversalPolicy
+        LooseSourceMapping = $rule.LooseSourceMapping
+        LocalOnlyMapping = $rule.LocalOnlyMapping
+    }
+    
+    New-NetFirewallRule @paramNewRule -PolicyStore PersistentStore -ErrorAction Stop
+}
+
+gpupdate /force
 ```
