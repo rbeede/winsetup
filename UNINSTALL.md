@@ -22,6 +22,7 @@ winget uninstall --disable-interactivity --accept-source-agreements --all "Quick
 winget uninstall --disable-interactivity --accept-source-agreements --all "Microsoft Teams"
 winget uninstall --disable-interactivity --accept-source-agreements --all "Spotify Music"
 winget uninstall --disable-interactivity --accept-source-agreements --all "Microsoft To Do"
+winget uninstall --disable-interactivity --accept-source-agreements --all "Game Speech Window"
 
 # Copilot disabled
 winget uninstall --disable-interactivity --accept-source-agreements --all "Microsoft 365 Copilot"
