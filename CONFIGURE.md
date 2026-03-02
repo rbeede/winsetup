@@ -121,7 +121,7 @@ Using the blockinboundalways (Block all incoming connections, including those in
 :: netsh advfirewall set All firewallpolicy blockinboundalways,allowoutbound
 ```
 
-This is not perfect as after you run it application later (but not an interactive user) could add rules in the background still. Need to look into a local GPO via registory keys that always ignores those rules and enforces the list:
+This first part alone will not stop admins or installed application from adding new rules later.
 ```
 Set-NetFirewallProfile -Profile Domain,Public,Private -AllowLocalFirewallRules False
 
@@ -159,4 +159,35 @@ foreach ($rule in $rulesInGroup) {
 }
 
 gpupdate /force
+```
+
+This script command forces a permission of readonly so admins and installed apps cannot add new rules later. This keeps the list nice and clean and simple. While GPO are possible to ignore local exception rules this method keeps a tidy list and is easier to understand what is going on.
+
+```powershell
+
+# Define the registry key path
+$registryPath = "HKLM:\SYSTEM\CurrentControlSet\Services\SharedAccess\Parameters\FirewallPolicy\FirewallRules"
+
+# Define the user/group and permissions
+$user = "Everyone"
+$permissions = "ReadPermissions" # Read-only access
+$type = "Allow"
+
+# 1. Get the current ACL of the registry key
+$acl = Get-Acl -Path $registryPath
+
+# 2. Disable inheritance and remove all inherited access rules
+# The first argument ($true) enables protection, the second ($false) removes inherited rules
+$acl.SetAccessRuleProtection($true, $false)
+
+# 3. Create a new RegistryAccessRule granting Everyone read-only access
+$rule = New-Object System.Security.AccessControl.RegistryAccessRule($user, $permissions, $type)
+
+# 4. Add the new access rule to the ACL
+$acl.AddAccessRule($rule)
+
+# 5. Apply the modified ACL to the registry key
+Set-Acl -Path $registryPath -AclObject $acl
+
+Write-Host "Registry permissions for $registryPath have been updated."
 ```
