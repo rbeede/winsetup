@@ -161,33 +161,5 @@ foreach ($rule in $rulesInGroup) {
 gpupdate /force
 ```
 
-This script command forces a permission of readonly so admins and installed apps cannot add new rules later. This keeps the list nice and clean and simple. While GPO are possible to ignore local exception rules this method keeps a tidy list and is easier to understand what is going on.
+Note: Local admins or other applications can still add rules to the list. Attempting to block changes to the list itself by making readonly "HKLM:\SYSTEM\CurrentControlSet\Services\SharedAccess\Parameters\FirewallPolicy\FirewallRules" results in firewall service failures upon reboot. You can configure some settings to define the rules via GPO only plus another to ignore any local rules created, but the list can always be modified. Use of a third-party firewall/tool to manage the list would be required if you want a clean one. Another alternative would be a scheduled task job to purge the rule list regularly.
 
-```powershell
-
-# Define the registry key path
-$registryPath = "HKLM:\SYSTEM\CurrentControlSet\Services\SharedAccess\Parameters\FirewallPolicy\FirewallRules"
-
-# Define the user/group and permissions
-$user = "Everyone"
-$permissions = "ReadPermissions" # Read-only access
-$type = "Allow"
-
-# 1. Get the current ACL of the registry key
-$acl = Get-Acl -Path $registryPath
-
-# 2. Disable inheritance and remove all inherited access rules
-# The first argument ($true) enables protection, the second ($false) removes inherited rules
-$acl.SetAccessRuleProtection($true, $false)
-
-# 3. Create a new RegistryAccessRule granting Everyone read-only access
-$rule = New-Object System.Security.AccessControl.RegistryAccessRule($user, $permissions, $type)
-
-# 4. Add the new access rule to the ACL
-$acl.AddAccessRule($rule)
-
-# 5. Apply the modified ACL to the registry key
-Set-Acl -Path $registryPath -AclObject $acl
-
-Write-Host "Registry permissions for $registryPath have been updated."
-```
