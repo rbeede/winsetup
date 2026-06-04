@@ -6,6 +6,7 @@ winget install Flameshot
 winget install Microsoft.WindowsTerminal
 winget install VideoLAN.VLC
 winget install Microsoft.PowerToys --source winget
+winget install -e --id WinDirStat.WinDirStat
 
 winget install --id Microsoft.Office -e
 ```
