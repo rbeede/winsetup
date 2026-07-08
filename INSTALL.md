@@ -1,20 +1,17 @@
 ```
-winget install -e --id 7zip.7zip
-winget install -e --id Duplicati.Duplicati
-winget install -e --id Notepad++.Notepad++
-winget install -e --id Google.Chrome
-winget install -e --id Mozilla.Firefox
-winget install -e --id Flameshot.Flameshot
-winget install -e --id Microsoft.WindowsTerminal
-winget install -e --id VideoLAN.VLC
-winget install -e --id Microsoft.PowerToys
-winget install -e --id WinDirStat.WinDirStat
-
-REM Handy Linux utils built for Windows
-winget install -e --id jqlang.jq
-winget install -e --id aria2.aria2
-winget install -e --id BurntSushi.ripgrep.GNU
-
-winget install -e --id Microsoft.Office
+winget install -e --id 7zip.7zip --accept-package-agreements --accept-source-agreements --silent
+winget install -e --id Duplicati.Duplicati --accept-package-agreements --accept-source-agreements --silent
+winget install -e --id Notepad++.Notepad++ --accept-package-agreements --accept-source-agreements --silent
+winget install -e --id Google.Chrome --accept-package-agreements --accept-source-agreements --silent
+winget install -e --id Mozilla.Firefox --accept-package-agreements --accept-source-agreements --silent
+winget install -e --id Flameshot.Flameshot --accept-package-agreements --accept-source-agreements --silent
+winget install -e --id Microsoft.WindowsTerminal --accept-package-agreements --accept-source-agreements --silent
+winget install -e --id VideoLAN.VLC --accept-package-agreements --accept-source-agreements --silent
+winget install -e --id Microsoft.PowerToys --accept-package-agreements --accept-source-agreements --silent
+winget install -e --id WinDirStat.WinDirStat --accept-package-agreements --accept-source-agreements --silent
+winget install -e --id jqlang.jq --accept-package-agreements --accept-source-agreements --silent
+winget install -e --id aria2.aria2 --accept-package-agreements --accept-source-agreements --silent
+winget install -e --id BurntSushi.ripgrep.GNU --accept-package-agreements --accept-source-agreements --silent
+winget install -e --id Microsoft.Office --accept-package-agreements --accept-source-agreements --silent
 
 ```
