@@ -96,6 +96,8 @@ REG ADD "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\FVE" /v "UseTPMKeyPIN" /
 
 ```
 powercfg /setactive 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c
+
+powercfg /hibernate off
 ```
 
 - Screensaver is disabled by default
