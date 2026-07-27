@@ -1,3 +1,5 @@
+Run as Administrator
+
 ```
 winget install -e --id 7zip.7zip --accept-package-agreements --accept-source-agreements --silent
 winget install -e --id Duplicati.Duplicati --accept-package-agreements --accept-source-agreements --silent
