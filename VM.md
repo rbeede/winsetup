@@ -21,3 +21,4 @@ defrag C: /H /L
    - Power back on VM
    - `manage-bde -on C: -usedspaceonly`
      - If the encryption auto-started at boot you may need to do -off again then this command
+     - `for /l %i in () do @(manage-bde -status c: & timeout /t 5)`
