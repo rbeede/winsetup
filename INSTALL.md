@@ -5,6 +5,7 @@ winget install --exact --id 7zip.7zip --accept-package-agreements --accept-sourc
 winget install --exact --id Duplicati.Duplicati --accept-package-agreements --accept-source-agreements --silent --scope machine
 winget install --exact --id Flameshot.Flameshot --accept-package-agreements --accept-source-agreements --silent --scope machine
 winget install --exact --id Google.Chrome --accept-package-agreements --accept-source-agreements --silent --scope machine
+winget install --exact --id Microsoft.PowerShell --source winget --accept-package-agreements --accept-source-agreements --silent --scope machine
 winget install --exact --id Microsoft.PowerToys --accept-package-agreements --accept-source-agreements --silent --scope machine
 winget install --exact --id Microsoft.WindowsTerminal --accept-package-agreements --accept-source-agreements --silent --scope machine
 winget install --exact --id Mozilla.Firefox --accept-package-agreements --accept-source-agreements --silent --scope machine
